@@ -85,12 +85,12 @@ class Users extends Component{
     {
       key: 'email',
       dataIndex: 'email',
-      title: translatedText.email
+      title: translatedText.label_email
     },
   
     {
       key: 'actions',
-      title: translatedText.label_actoins,
+      title: translatedText.label_actions,
       align: 'center',
       render: (textColumn, record) => (
         <span>
