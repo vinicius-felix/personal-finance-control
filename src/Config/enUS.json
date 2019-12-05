@@ -1,0 +1,129 @@
+{
+
+  "language": "en-us",
+
+  "login": {
+    "button_login": "Login",
+    "button_sign_up": "Sign Up",
+    "placeholder_username": "Username",
+    "placeholder_password": "Password",
+    "error_message_username": "Username can't be blank!",
+    "error_message_password": "Password can't be blank!"
+  },
+
+  "menu": {
+    "home": "Home",
+    "spends": "Spends",
+    "gains": "Gains",
+    "charts": "Charts",
+    "categories": "Categories",
+    "settings": "Settings",
+    "users": "Users",
+    "logout": "Logout",
+    "version": "Version"
+  },
+
+  "home": {  
+    "welcome": "Welcome"
+  },
+
+  "spends": {
+    "title_list": "Spends History",
+    "title_add": "Add",
+    "title_new": "New",
+    "title_edit": "Edit",
+    "button_save": "Save",
+    "button_ok": "Ok",
+    "button_cancel": "Cancel",
+    "label_currency_prefix": "$",
+    "label_delete": "Are you want remove this spend?",
+    "label_delete_success": "Spend removed with success.",
+    "button_yes": "Yes",
+    "button_no": "No",
+    "label_date": "Date",
+    "label_category": "Category",
+    "label_description": "Description",
+    "label_value": "Value",
+    "label_actions": "Actions",
+    "placeholder_category": "Select a category...",
+    "placeholder_description": "Insert a description...",
+    "placeholder_value": "Insert a value...",
+    "placeholder_date": "Select a date...",
+    "error_message_category": "Category can't be blank!",
+    "error_message_description": "Description can't be blank!",
+    "error_message_value": "Value can't be blank!",
+    "error_message_date": "Date can't be blank!"
+  },
+
+  "gains": {
+    "title_list": "Gains History",
+    "title_add": "Add",
+    "title_new": "New",
+    "title_edit": "Edit",
+    "button_save": "Save",
+    "button_ok": "Ok",
+    "button_cancel": "Cancel",
+    "label_currency_prefix": "$",
+    "label_delete": "Are you want remove this gain?",
+    "label_delete_success": "Gain removed with success.",
+    "button_yes": "Yes",
+    "button_no": "No",
+    "label_date": "Date",
+    "label_category": "Category",
+    "label_description": "Description",
+    "label_value": "Value",
+    "label_actions": "Actions",
+    "placeholder_category": "Select a category...",
+    "placeholder_description": "Insert a description...",
+    "placeholder_value": "Insert a value...",
+    "placeholder_date": "Select a date...",
+    "error_message_category": "Category can't be blann!",
+    "error_message_description": "Description can't be blann!",
+    "error_message_value": "Value can't be blann!",
+    "error_message_date": "Date can't be blann!"
+  },
+
+  "charts": {},
+
+  "categories": {
+    "title_list": "Categories",
+    "title_new": "Add",
+    "title_edit": "Edit",
+    "button_save": "Save",
+    "button_ok": "Ok",
+    "button_cancel": "Cancel",
+    "label_actions": "Action",
+    "label_delete": "Are you want remove this category?",
+    "label_name": "Name",
+    "button_yes": "Yes",
+    "button_no": "No"
+  },
+
+  "settings": {
+    "language": "Language select",
+    "title": "Change layout colors",
+    "header": "Header",
+    "footer": "Footer",
+    "menu": "Side Bar",
+    "background": "Background",
+    "label_restore": "Default",
+    "label_component": "Component",
+    "label_color": "Color",
+    "label_default": "Default",
+    "label_confirm": "Save"
+  },
+
+  "users": {
+    "label_list": "Users",
+    "label_new": "Add",
+    "label_name": "Name",
+    "label_email": "Email",
+    "label_password": "Password",
+    "label_actions": "Actions",
+    "label_delete": "Are you want remove this user?",
+    "button_yes": "Yes",
+    "button_no": "No",
+    "button_save": "Save"
+  }
+
+}

@@ -1,0 +1,128 @@
+{
+
+  "language": "pt-br",
+
+  "login": {
+    "button_login": "Entrar",
+    "button_sign_up": "Cadastrar",
+    "placeholder_username": "Usuário",
+    "placeholder_password": "Senha",
+    "error_message_username": "Informe o usuário!",
+    "error_message_password": "Informe a senha!"
+  },
+
+  "menu": {
+    "home": "Início",
+    "spends": "Gastos",
+    "gains": "Ganhos",
+    "charts": "Gráficos",
+    "categories": "Categorias",
+    "settings": "Opções",
+    "users": "Usuários",
+    "logout": "Sair",
+    "version": "Versão"
+  },
+
+  "home": {  
+    "welcome": "Bem Vindo"
+  },
+
+  "spends": {
+    "title_list": "Histórico de Gastos",
+    "title_add": "Adicionar",
+    "title_new": "Novo Gasto",
+    "title_edit": "Editar",
+    "button_save": "Salvar",
+    "button_ok": "Confirmar",
+    "button_cancel": "Cancelar",
+    "label_currency_prefix": "R$",
+    "label_delete": "Deseja realmente excluir este gasto?",
+    "label_delete_success": "Gasto deletado com sucesso.",
+    "button_yes": "Sim",
+    "button_no": "Não",
+    "label_date": "Data",
+    "label_category": "Categoria",
+    "label_description": "Descrição",
+    "label_value": "Valor",
+    "label_actions": "Ações",
+    "placeholder_category": "Selecione uma categoria...",
+    "placeholder_description": "Informe uma descrição...",
+    "placeholder_value": "Informe um valor...",
+    "placeholder_date": "Selecione uma data...",
+    "error_message_category": "Categoria do gasto obrigatória!",
+    "error_message_description": "Descrição do gasto obrigatória!",
+    "error_message_value": "Valor do gasto obrigatório!",
+    "error_message_date": "Data do gasto obrigatória!"
+  },
+
+  "gains": {
+    "title_list": "Histórico de Ganhos",
+    "title_add": "Adicionar",
+    "title_new": "Novo Ganho",
+    "title_edit": "Editar",
+    "button_save": "Salvar",
+    "button_ok": "Confirmar",
+    "button_cancel": "Cancelar",
+    "label_currency_prefix": "R$",
+    "label_delete": "Deseja realmente excluir este ganho?",
+    "label_delete_success": "Ganho deletado com sucesso.",
+    "button_yes": "Sim",
+    "button_no": "Não",
+    "label_date": "Data",
+    "label_category": "Categoria",
+    "label_description": "Descrição",
+    "label_value": "Valor",
+    "label_actions": "Ações",
+    "placeholder_category": "Selecione uma categoria...",
+    "placeholder_description": "Informe uma descrição...",
+    "placeholder_value": "Informe um valor...",
+    "placeholder_date": "Selecione uma data...",
+    "error_message_category": "Categoria do ganho obrigatória!",
+    "error_message_description": "Descrição do ganho obrigatória!",
+    "error_message_value": "Valor do ganho obrigatório!",
+    "error_message_date": "Data do ganho obrigatória!"
+  },
+
+  "charts": {},
+
+  "categories": {
+    "title_list": "Categorias",
+    "title_new": "Adicionar",
+    "title_edit": "Editar",
+    "button_save": "Salvar",
+    "button_ok": "Confirmar",
+    "button_cancel": "Cancelar",
+    "label_actions": "Ações",
+    "label_delete": "Deseja realmente excluir esta categoria?",
+    "label_name": "Nome",
+    "button_yes": "Sim",
+    "button_no": "Não"
+  },
+
+  "settings": {
+    "language": "Escolha o idioma",
+    "title": "Altere as cores do layout",
+    "header": "Cabeçalho",
+    "footer": "Rodapé",
+    "menu": "Menu Lateral",
+    "background": "Cor de Fundo",
+    "label_restore": "Restaurar",
+    "label_component": "Componente",
+    "label_color": "Cor",
+    "label_default": "Padrão",
+    "label_confirm": "Aplicar"
+  },
+
+  "users": {
+    "label_new": "Adicionar",
+    "label_name": "Nome",
+    "label_email": "Email",
+    "label_password": "Senha",
+    "label_actions": "Ações",
+    "label_delete": "Deseja realmente excluir este usuário?",
+    "button_yes": "Sim",
+    "button_no": "Não",
+    "button_save": "Salvar"
+  }
+
+}
