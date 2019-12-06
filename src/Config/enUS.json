@@ -41,15 +41,15 @@
     "button_yes": "Yes",
     "button_no": "No",
     "label_date": "Date",
-    "label_category": "Category",
+    "label_name": "Category",
     "label_description": "Description",
     "label_value": "Value",
     "label_actions": "Actions",
-    "placeholder_category": "Select a category...",
+    "placeholder_name": "Select a category...",
     "placeholder_description": "Insert a description...",
     "placeholder_value": "Insert a value...",
     "placeholder_date": "Select a date...",
-    "error_message_category": "Category can't be blank!",
+    "error_message_name": "Category can't be blank!",
     "error_message_description": "Description can't be blank!",
     "error_message_value": "Value can't be blank!",
     "error_message_date": "Date can't be blank!"
@@ -83,7 +83,9 @@
     "error_message_date": "Date can't be blann!"
   },
 
-  "charts": {},
+  "charts": {
+    "title_chart": "Charts"
+  },
 
   "categories": {
     "title_list": "Categories",

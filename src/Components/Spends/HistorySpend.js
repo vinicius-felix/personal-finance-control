@@ -110,8 +110,8 @@ class HistorySpend extends Component{
     },
   
     {
-      key: 'category',
-      dataIndex: 'category',
+      key: 'name',
+      dataIndex: 'name',
       title: translatedText.label_category,
     },
   

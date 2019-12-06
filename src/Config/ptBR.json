@@ -41,15 +41,15 @@
     "button_yes": "Sim",
     "button_no": "Não",
     "label_date": "Data",
-    "label_category": "Categoria",
+    "label_name": "Categoria",
     "label_description": "Descrição",
     "label_value": "Valor",
     "label_actions": "Ações",
-    "placeholder_category": "Selecione uma categoria...",
+    "placeholder_name": "Selecione uma categoria...",
     "placeholder_description": "Informe uma descrição...",
     "placeholder_value": "Informe um valor...",
     "placeholder_date": "Selecione uma data...",
-    "error_message_category": "Categoria do gasto obrigatória!",
+    "error_message_name": "Categoria do gasto obrigatória!",
     "error_message_description": "Descrição do gasto obrigatória!",
     "error_message_value": "Valor do gasto obrigatório!",
     "error_message_date": "Data do gasto obrigatória!"
@@ -83,7 +83,9 @@
     "error_message_date": "Data do ganho obrigatória!"
   },
 
-  "charts": {},
+  "charts": {
+    "title_chart": "Gráficos"
+  },
 
   "categories": {
     "title_list": "Categorias",

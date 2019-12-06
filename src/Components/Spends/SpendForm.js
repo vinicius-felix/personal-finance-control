@@ -16,7 +16,7 @@ class SpendForm extends Component{
     edit: false,
     data: {},
     form: {
-      category: '',
+      name: '',
       description: '',
       value: '',
       date: ''
@@ -64,7 +64,7 @@ class SpendForm extends Component{
     this.setState((prev, props) => ({
       form: {
         ...prev.form,
-        category: e
+        name: e
       }
     }))
   }
@@ -100,14 +100,14 @@ class SpendForm extends Component{
           </Title>
 
           <Form {...formItemLayout} onSubmit={this.handleSubmit}>
-            <Form.Item label={translatedText.label_category}>
-              {getFieldDecorator('category', {
-                rules: [{ required: true, message: translatedText.error_message_category }],
+            <Form.Item label={translatedText.label_name}>
+              {getFieldDecorator('name', {
+                rules: [{ required: true, message: translatedText.error_message_name }],
               })(
-                <Select onChange={e => this.onChangeSelect(e)} placeholder={translatedText.placeholder_category}>
+                <Select onChange={e => this.onChangeSelect(e)} placeholder={translatedText.placeholder_name}>
                   { 
-                    this.state.data.categories && this.state.data.categories.map(category => 
-                      <Option key={category._id} value={category.name}>{category.name}</Option>
+                    this.state.data.categories && this.state.data.categories.map(name => 
+                      <Option key={name._id} value={name.name}>{name.name}</Option>
                   )}
                 </Select>
               )}
