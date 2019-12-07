@@ -15,14 +15,17 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
 class Graphics extends Component{
   state = {
-    data: {}
+    data: {},
+    loading: false
   }
 
   setChartData = () => {
     let categories = this.state.data.categories;
     let spends = this.state.data.spends;
+    dataChart = []
+
     categories && categories.map(category => {
-      let cats = spends.filter((spend) => {
+      let cats = spends && spends.filter((spend) => {
         return spend.name.toLowerCase() === category.name.toLowerCase();
       });
 
@@ -36,7 +39,7 @@ class Graphics extends Component{
     return dataChart;
   }
   
-  componentDidMount(){
+  async componentDidMount(){
 
     apiSpends.get('/', (req, res) => {
       res.send(req.data)
@@ -49,7 +52,7 @@ class Graphics extends Component{
       })))
       .catch(err => console.warn(err));
       
-    apiCategories.get('/',  (req, res) => {
+      apiCategories.get('/',  (req, res) => {
       res.send(req.data)
     })
       .then(res => this.setState((prev, props) => ({
