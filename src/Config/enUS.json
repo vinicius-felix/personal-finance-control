@@ -20,7 +20,8 @@
     "settings": "Settings",
     "users": "Users",
     "logout": "Logout",
-    "version": "Version"
+    "version": "Version",
+    "loading": "Loading..."
   },
 
   "home": {  

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { MainLayout } from './../MainLayout'
+import { LoadingContent } from './../LoadingContent';
 import 'antd/dist/antd.css';
 import { Form, DatePicker, Table, Divider, Button, Icon, Popconfirm, Row, Col, message, Typography, Modal, Select, Input } from 'antd';
 import { Link } from 'react-router-dom';
@@ -8,6 +9,7 @@ import apiCategories from '../../Services/service-categories';
 import { text } from '../../Config/config';
 
 const translatedText = text.spends;
+const textLoading = text.menu.loading;
 const { RangePicker } = DatePicker;
 const { Title } = Typography;
 const { Option } = Select;
@@ -18,7 +20,8 @@ class HistorySpend extends Component{
     data: {
       spends: []
     },
-    form: {}
+    form: {},
+    loading: false
   }
 
   onConfirm = async (id) => {
@@ -148,8 +151,9 @@ class HistorySpend extends Component{
     }
   ];
 
+  
   componentDidMount(){
-
+    
     apiSpends.get('/', (req, res) => {
       res.send(req.data)
     })
@@ -172,6 +176,8 @@ class HistorySpend extends Component{
       })))
       .catch(err => console.warn(err));
 
+      this.setState({loading: true});
+
   }
 
   render(){
@@ -189,34 +195,33 @@ class HistorySpend extends Component{
       <MainLayout content={
         <div>
           <Title level={3} style={{paddingTop: 10, paddingBottom: 50}}>
-            <div> 
-              <Row>
-                <Col span={8}>{translatedText.title_list}</Col>
-                <Col span={11} style={{ textAlign: 'center' }}> 
-                  <RangePicker onChange={this.onChangeDate} format="DD/MM/YYYY" />
-                </Col>
-                <Col span={5} style={{ textAlign: 'right' }}>
-                  <Button type='primary' style={{ marginLeft: 10 }}> 
-                    <Link to='/historico-gastos/novo'>{translatedText.title_add}</Link> 
-                  </Button>
-                </Col>
-              </Row>
-            </div>
-         </Title>
+            <Row>
+              <Col span={8}>{translatedText.title_list}</Col>
+              <Col span={11} style={{ textAlign: 'center' }}> 
+                <RangePicker onChange={this.onChangeDate} format="DD/MM/YYYY" />
+              </Col>
+              <Col span={5} style={{ textAlign: 'right' }}>
+                <Button type='primary' style={{ marginLeft: 10 }}> 
+                  <Link to='/historico-gastos/novo'>{translatedText.title_add}</Link> 
+                </Button>
+              </Col>
+            </Row>
+          </Title>
 
-         <Table rowKey="_id" columns={this.columns} dataSource={this.state.data.spends} onChange={this.handleChange} />
+          { !this.state.loading && <LoadingContent loadingText={textLoading} /> }
+          { this.state.loading && <Table rowKey="_id" columns={this.columns} dataSource={this.state.data.spends} onChange={this.handleChange} />}
 
-         <Modal title={translatedText.title_edit} visible={this.state.visible} onOk={this.onOkModal} onCancel={this.onCancelModal} okText={translatedText.button_ok} cancelText={translatedText.button_cancel}>
+          <Modal title={translatedText.title_edit} visible={this.state.visible} onOk={this.onOkModal} onCancel={this.onCancelModal} okText={translatedText.button_ok} cancelText={translatedText.button_cancel}>
 
             <Form {...formItemLayout} onSubmit={this.handleSubmit}>
-              <Form.Item label={translatedText.label_category}>
-                {getFieldDecorator('category', {
-                  initialValue: this.state.form && this.state.form.category, rules: [{ required: true, message: translatedText.error_message_category }],
+              <Form.Item label={translatedText.label_name}>
+                {getFieldDecorator('name', {
+                  initialValue: this.state.form && this.state.form.name, rules: [{ required: true, message: translatedText.error_message_name }],
                 })(
-                  <Select onChange={e => this.onChangeSelect(e)} placeholder={translatedText.placeholder_category}>
+                  <Select onChange={e => this.onChangeSelect(e)} placeholder={translatedText.placeholder_name}>
                     { 
-                      this.state.data.categories && this.state.data.categories.map(category => 
-                        <Option key={category._id} value={category.name}>{category.name}</Option>
+                      this.state.data.categories && this.state.data.categories.map(name => 
+                        <Option key={name._id} value={name.name}>{name.name}</Option>
                     )}
                   </Select>
                 )}
@@ -247,6 +252,7 @@ class HistorySpend extends Component{
         </div>
       } />
     )
+    
   }
 }
 

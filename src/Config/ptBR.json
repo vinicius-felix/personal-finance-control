@@ -20,7 +20,8 @@
     "settings": "Opções",
     "users": "Usuários",
     "logout": "Sair",
-    "version": "Versão"
+    "version": "Versão",
+    "loading": "Carregando..."
   },
 
   "home": {  

@@ -5,24 +5,25 @@ import 'antd/dist/antd.css';
 import * as enUs from '../../Config/enUS.json';
 import * as ptBr from '../../Config/ptBR.json';
 import { SliderPicker } from 'react-color';
-
 import { text } from '../../Config/config';
 
 const translatedText = text.settings;
-
 class Options extends Component{
 
   state = {
+    language: text.language,
     header: '#349beb',
     menu: '#596370',
     background: '#ffffff',
-    footer: '#d1dee8'
+    footer: '#d1dee8',
+    
   };
     
   setUserLanguage = (e) => {
     e.target.value.includes('en-us')
       ? localStorage.setItem('text', JSON.stringify(enUs.default))
-      : localStorage.setItem('text', JSON.stringify(ptBr.default));
+      : localStorage.setItem('text', JSON.stringify(ptBr.default))
+    ;
     
     document.location.reload(true);
   }
@@ -68,7 +69,7 @@ class Options extends Component{
       <MainLayout content={
         <div>
           <Card title={translatedText.language}>
-            <Radio.Group value='large' onChange={this.setUserLanguage}>            
+            <Radio.Group onChange={this.setUserLanguage} defaultValue={this.state.language}>
               <Radio.Button value='pt-br'>Português(Brasil)</Radio.Button>
               <Radio.Button value='en-us'>English(US)</Radio.Button>
             </Radio.Group>
@@ -111,7 +112,6 @@ class Options extends Component{
             <Row style={{...paddingTop, textAlign: 'right'}}>
               <Button type='primary' onClick={this.changeLayout}>{translatedText.label_confirm}</Button>
             </Row>
-
             
           </Card>
           

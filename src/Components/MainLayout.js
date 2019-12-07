@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 // import logo from '../Images/logo4.png';
 import 'antd/dist/antd.css';
 import { text } from '../Config/config';
+import { LoadingContent } from './LoadingContent';
 
 const translatedText = text.menu;
 const { Header, Footer, Content, Sider } = Layout;
@@ -76,8 +77,7 @@ export class MainLayout extends Component{
     text: JSON.parse(localStorage.getItem('text'))
   }
 
-  render(){    
-    
+  render(){
     return(
       <MainLayoutSite content={this.props.content} />
     )
