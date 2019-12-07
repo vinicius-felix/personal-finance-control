@@ -3,7 +3,7 @@ import * as ptBr from './ptBR.json';
 export const text = JSON.parse(localStorage.getItem('text'));
 
 const verifyLanguage = async () => {
-  console.log('Verificando linguagem...');
+  // console.log('Verificando linguagem...');
 
   if(!localStorage.getItem('text')){
     console.log('Nao foi encontrado linguagem. Retornando para padrao');
@@ -12,7 +12,7 @@ const verifyLanguage = async () => {
     return
   }
 
-  console.log('Verificação concluida.');
+  // console.log('Verificação concluida.');
 
 }
 
@@ -26,7 +26,7 @@ let layout = {
 
 const verifyLayoutColors = async () => {
   
-  console.log('Verificando layout...');
+  // console.log('Verificando layout...');
 
   if(!localStorage.getItem('layoutColors')){
     console.log('Nao foi possivel encontrar o layout. Retornando para padrao');
@@ -36,10 +36,10 @@ const verifyLayoutColors = async () => {
   }
 
   Object.assign(layout, JSON.parse(localStorage.getItem('layoutColors')))
-  console.log('Verificação concluida.', layout);
+  // console.log('Verificação concluida.', layout);
 }
 
 verifyLanguage();
 verifyLayoutColors();
 
-console.log(localStorage)
+// console.log(localStorage)
