@@ -8,15 +8,26 @@ import { SliderPicker } from 'react-color';
 import { text } from '../../Config/config';
 
 const translatedText = text.settings;
+const layoutSettings = JSON.parse(localStorage.getItem('layoutColors'));
+const languageSettings = JSON.parse(localStorage.getItem('text'));
+const paddingTop = {
+  paddingTop: 70
+};
+const colorsDefault = {
+  header: '#349beb',
+  menu: '#596370',
+  background: '#ffffff',
+  footer: '#d1dee8'
+};
+
 class Options extends Component{
 
   state = {
-    language: text.language,
-    header: '#349beb',
-    menu: '#596370',
-    background: '#ffffff',
-    footer: '#d1dee8',
-    
+    header: layoutSettings.header,
+    footer: layoutSettings.footer,
+    background: layoutSettings.background,
+    menu: layoutSettings.menu,
+    language: languageSettings.language
   };
     
   setUserLanguage = (e) => {
@@ -49,26 +60,23 @@ class Options extends Component{
     window.location.reload(true);
   }
 
-  restoreLayout = () => {
-    this.setState({
-      header: '#349beb',
-      menu: '#596370',
-      background: '#ffffff',
-      footer: '#d1dee8'
+  restoreLayout = async () => {
+    await this.setState({
+      header: colorsDefault.header,
+      menu: colorsDefault.menu,
+      background: colorsDefault.background,
+      footer: colorsDefault.footer
     });
-    localStorage.setItem('layoutColors', JSON.stringify(this.state));
+    await localStorage.setItem('layoutColors', JSON.stringify(this.state));
     window.location.reload(true);
   }
 
   render(){
-    const paddingTop = {
-      paddingTop: 70
-    }
 
     return(
       <MainLayout content={
         <div>
-          <Card title={translatedText.language}>
+          <Card title={translatedText.language} style={{textAlign: 'center'}}>
             <Radio.Group onChange={this.setUserLanguage} defaultValue={this.state.language}>
               <Radio.Button value='pt-br'>Português(Brasil)</Radio.Button>
               <Radio.Button value='en-us'>English(US)</Radio.Button>
@@ -114,6 +122,7 @@ class Options extends Component{
             </Row>
             
           </Card>
+          {console.log(this.state)}
           
         </div>
       } />
