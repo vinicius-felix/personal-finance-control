@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { MainLayout } from './../MainLayout'
 import 'antd/dist/antd.css';
 import { Form, Input, Typography, Button } from 'antd';
-import apiCategories from '../../Services/service-categories';
+import apiAuth from '../../Services/service-auth';
 import { text } from '../../Config/config';
 
 const translatedText = text.users;
@@ -28,8 +28,8 @@ class UserForm extends Component{
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        apiCategories.post('/create', form);
-        this.props.history.replace('/categorias');
+        apiAuth.post('/create', form);
+        this.props.history.replace('/usuarios');
     }});
   };
 

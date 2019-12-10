@@ -112,7 +112,7 @@ class Users extends Component{
 
   componentDidMount() {
     apiAuth.get('/', (req, res) => {
-      res.send(req.data)        
+      res.send(req.data)
     })
     .then(res => this.setState((prev, props) => ({
       data: {
