@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { MainLayout } from './../MainLayout';
 import { Radio, Card, Row, Col, Button } from 'antd';
+import { SliderPicker } from 'react-color';
 import 'antd/dist/antd.css';
 import * as enUs from '../../Config/enUS.json';
 import * as ptBr from '../../Config/ptBR.json';
-import { SliderPicker } from 'react-color';
 import { text } from '../../Config/config';
 
 const translatedText = text.settings;
@@ -31,13 +31,11 @@ class Options extends Component{
   };
     
   setUserLanguage = (e) => {
-    e.target.value.includes('en-us')
-      ? localStorage.setItem('text', JSON.stringify(enUs.default))
-      : localStorage.setItem('text', JSON.stringify(ptBr.default))
-    ;
     
+    e.target.value.includes('en-us') && localStorage.setItem('text', JSON.stringify(enUs.default));
+    e.target.value.includes('pt-br') && localStorage.setItem('text', JSON.stringify(ptBr.default));
     document.location.reload(true);
-  }
+  };
 
   handleChangeHeader = (color) => {
     this.setState((prev, props) => ({ ...prev, header: color.hex }));
@@ -58,7 +56,7 @@ class Options extends Component{
   changeLayout = () => {    
     localStorage.setItem('layoutColors', JSON.stringify(this.state));
     window.location.reload(true);
-  }
+  };
 
   restoreLayout = async () => {
     await this.setState({
@@ -69,7 +67,7 @@ class Options extends Component{
     });
     await localStorage.setItem('layoutColors', JSON.stringify(this.state));
     window.location.reload(true);
-  }
+  };
 
   render(){
 
@@ -122,7 +120,6 @@ class Options extends Component{
             </Row>
             
           </Card>
-          {console.log(this.state)}
           
         </div>
       } />

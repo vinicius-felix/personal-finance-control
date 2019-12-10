@@ -2,6 +2,13 @@ import * as ptBr from './ptBR.json';
 
 export const text = JSON.parse(localStorage.getItem('text'));
 
+const layout = {
+  "header": "#349beb",
+  "menu": "#596370",
+  "background": "#ffffff",
+  "footer": "#d1dee8"
+};
+
 const verifyLanguage = () => {
 
   if(!localStorage.getItem('text')){
@@ -12,13 +19,6 @@ const verifyLanguage = () => {
   }
 }
 
-let layout = {
-  "header": "#349beb",
-  "menu": "#596370",
-  "background": "#ffffff",
-  "footer": "#d1dee8"
-};
-
 const verifyLayoutColors = () => {
   
   if(!localStorage.getItem('layoutColors')){
@@ -27,9 +27,6 @@ const verifyLayoutColors = () => {
     document.location.reload(true);
     return 0;
   }
-
-  Object.assign(layout, JSON.parse(localStorage.getItem('layoutColors')))
-  
 }
 
 verifyLanguage();

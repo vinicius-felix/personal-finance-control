@@ -94,9 +94,9 @@ const MainLayoutSite = (props) => (
         <h3 style={{...colorWhite, textAlign: 'center'}}>Personal Finance Control</h3>
       </Col>
       <Col span={3}>
-        <Link style={{color: 'white'}} to='/login' onClick={ () => localStorage.clear() }>
+        <Link style={colorWhite} to='/login' onClick={ () => localStorage.clear() }>
           {translatedText.logout}
-          <Icon style={{color:'white', fontSize: 15, marginLeft: 5}} type='logout' />
+          <Icon style={{...colorWhite, fontSize: 15, marginLeft: 5}} type='logout' />
         </Link>
         
       </Col>
