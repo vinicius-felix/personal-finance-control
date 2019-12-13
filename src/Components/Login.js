@@ -31,14 +31,10 @@ class Login extends Component{
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        const headerConfig = {
-          headers: {
-            token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkZDcwYjdhOTY0OWQ1MmUyNDBhMzIyOCIsImVtYWlsIjoiZmVsaXgiLCJpYXQiOjE1NzQ4NTk3NTQsImV4cCI6MTU3NDk0NjE1NH0.h2eaoDpUIUKS-R8rfCnnGT1q2oD734ik-7ehqZUy8O8'
-          }
-        }
-        axios.post('http://localhost:3001/auth/authenticate', values, headerConfig)
+        axios.post('http://localhost:3001/auth/authenticate', values)
           .then(res => (
-            console.log('res', res.data)
+            console.log('res', res.data),
+            this.props.history.replace('/')
           ))
           .catch(err => console.warn(err))
       }
