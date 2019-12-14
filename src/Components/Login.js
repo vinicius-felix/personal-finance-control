@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Layout, Typography, Input, Button, Form, Icon, Divider } from 'antd';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import 'antd/dist/antd.css';
-import axios from 'axios';
 import { text } from '../Config/config';
+import axios from 'axios';
 
+const apiAuth = axios.create({ baseURL: 'http://localhost:3001/auth' });
 const translatedText = text.login;
 const { Header, Footer, Content } = Layout;
 const { Title } = Typography;
@@ -26,19 +27,28 @@ const center = {
 };
 
 class Login extends Component{
-  
+
   handleSubmit = e => {
+    
     e.preventDefault();
+
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        axios.post('http://localhost:3001/auth/authenticate', values)
-          .then(res => (
-            console.log('res', res.data),
-            this.props.history.replace('/')
-          ))
+        const { email, password } = values
+        apiAuth.post('/authenticate', { email: email, password: password })
+          .then(res => {
+            console.log(res)
+            if(res.status === 200)
+              this.props.history.replace('/')
+          })
           .catch(err => console.warn(err))
+
+        
+        
       }
+      
     });
+    
   };
 
   render(){    
@@ -61,6 +71,7 @@ class Login extends Component{
                 <Input
                   prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
                   placeholder={translatedText.placeholder_username}
+                  autoFocus
                 />
               )}
             </Form.Item>
