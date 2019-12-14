@@ -168,11 +168,11 @@ class Users extends Component{
               })(<Input onChange={this.onChange} placeholder={translatedText.placeholder_email} />)}
             </Form.Item>
 
-            {/* <Form.Item label={translatedText.label_password}>
+            <Form.Item label={translatedText.label_password}>
               {getFieldDecorator('password', {
                 initialValue: this.state.form && this.state.form.password, rules: [{ required: true, message: translatedText.error_message_password }],
               })(<Input onChange={this.onChange} placeholder={translatedText.placeholder_password} />)}
-            </Form.Item> */}
+            </Form.Item>
 
           </Form>
 
