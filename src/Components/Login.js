@@ -37,18 +37,12 @@ class Login extends Component{
         const { email, password } = values
         apiAuth.post('/authenticate', { email: email, password: password })
           .then(res => {
-            console.log(res)
             if(res.status === 200)
               this.props.history.replace('/')
           })
-          .catch(err => console.warn(err))
-
-        
-        
+          .catch(err => console.warn(err))        
       }
-      
     });
-    
   };
 
   render(){    
@@ -98,12 +92,7 @@ class Login extends Component{
               <Button type="primary" htmlType="submit" className="login-form-button" ghost>
                 {translatedText.button_sign_up}
               </Button>
-
-              <Divider type="vertical" />
-
-              <Button type="danger" className="login-form-button" ghost>
-                <Link to='/'> Inicio </Link>
-              </Button>
+              
             </Form.Item>
 
           </Form>
