@@ -34,6 +34,7 @@ class Graphics extends Component{
       }, 0);
 
       sumCat > 0 && dataChart.push(Object.assign({ name: category.name, value: sumCat}));
+      return 0;
     })
 
     return dataChart;

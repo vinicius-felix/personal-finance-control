@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Layout, Row, Col, Icon, Spin } from 'antd';
+import { Icon, Spin } from 'antd';
 import 'antd/dist/antd.css';
 
 const icon = <Icon type="loading" style={{fontSize: 24}} spin />

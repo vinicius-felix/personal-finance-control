@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Layout, Typography, Input, Button, Form, Icon, Divider } from 'antd';
-import { Link } from 'react-router-dom';
 import 'antd/dist/antd.css';
 import { text } from '../Config/config';
 import axios from 'axios';
